@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="input-form">
+        <form name="" (submit)= "createStudent()">
+            <label for="name">Name :</label>
+            <input type="text" name="name" [(ngModel)]="studentName" class="margin3">
+            <label for="sex">Sex :</label>
+            <input type="text" name="sex" [(ngModel)]="studentSex" class="margin3">
+            <label for="contact">Contact :</label>
+            <input type="text" name="contact" [(ngModel)]="studentContact" class="margin3">
+            <input type="submit" value="Create">
+        </form>
+    </div> 
+
+    <div>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Sex</th>
+          <th>Contact</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor = "let student of studentArray; let i = index">
+          <td>{{student.name}}</td>
+          <td>{{student.sex}}</td>
+          <td>{{student.contact}}</td>
+          <td><button>Edit</button><button (click)= "deleteStudent(i)">Delete</button></td>
+        </tr>
+      </table>
+    </div>
+</div>
